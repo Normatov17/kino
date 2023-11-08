@@ -5,13 +5,13 @@ import AppFilter from "../app-filter/app-filter";
 
 const App = () => {
   return (
-    <div className="app">
-      <div>
+    <div className="app font-monofcase">
+      <div className="content">
         <AppInfo />
-      </div>
-      <div>
-        <SearchPanel />
-        <AppFilter />
+        <div className="serch-panel">
+          <SearchPanel />
+          <AppFilter />
+        </div>
       </div>
     </div>
   );
