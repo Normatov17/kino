@@ -2,6 +2,8 @@ import "./app.css";
 import AppInfo from "../app-info/app-info";
 import SearchPanel from "../search-panel/search-panel";
 import AppFilter from "../app-filter/app-filter";
+import MovieAddListAdd from "../movie-list/movie-list";
+import MovieListAdd from "../movieform/movie-form-add";
 
 const App = () => {
   return (
@@ -12,6 +14,8 @@ const App = () => {
           <SearchPanel />
           <AppFilter />
         </div>
+        <MovieAddListAdd />
+        <MovieListAdd />
       </div>
     </div>
   );
