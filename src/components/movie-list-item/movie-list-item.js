@@ -1,5 +1,5 @@
 import "./movie-list-item.css";
-const MovieListItem = () => {
+const MovieListItem = ({ name, viewer }) => {
   return (
     <li className="list-group-item d-flex  justify-content-between ">
       <span className="list-group-item-label">Osmon</span>

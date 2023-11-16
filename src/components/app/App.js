@@ -6,6 +6,11 @@ import MovieAddListAdd from "../movie-list/movie-list";
 import MovieListAdd from "../movieform/movie-form-add";
 
 const App = () => {
+  const data = [
+    { name: "Empario Osmon ", viewers: 1290 },
+    { name: "Omar", viewers: 1922 },
+    { name: "Umar Ibn Hattob", viewers: 908 },
+  ];
   return (
     <div className="app font-monofcase">
       <div className="content">
