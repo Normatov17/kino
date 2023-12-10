@@ -4,12 +4,11 @@ import SearchPanel from "../search-panel/search-panel";
 import AppFilter from "../app-filter/app-filter";
 import MovieAddListAdd from "../movie-list/movie-list";
 import MovieListAdd from "../movieform/movie-form-add";
-
 const App = () => {
   const data = [
-    { name: "Empario Osmon ", viewers: 1290 },
-    { name: "Omar", viewers: 1922 },
-    { name: "Umar Ibn Hattob", viewers: 908 },
+    { name: "Empario Osmon ", viewers: 1290, id: 1, favourite: true },
+    { name: "Omar", viewers: 1922, id: 2, favourite: true },
+    { name: "Umar Ibn Hattob", viewers: 908, id: 3, favourite: false },
   ];
   return (
     <div className="app font-monofcase">
@@ -19,7 +18,7 @@ const App = () => {
           <SearchPanel />
           <AppFilter />
         </div>
-        <MovieAddListAdd />
+        <MovieAddListAdd data={data} />
         <MovieListAdd />
       </div>
     </div>
