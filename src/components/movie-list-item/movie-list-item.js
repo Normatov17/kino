@@ -22,7 +22,7 @@ class MovieListItem extends Component {
     }));
   };
   render() {
-    const { name, viewers } = this.props;
+    const { name, viewers, onDelete } = this.props;
     const { favourite, like } = this.state;
     return (
       <li
@@ -43,7 +43,7 @@ class MovieListItem extends Component {
             <i className="fas fa-cookie"></i>
           </button>
 
-          <button className="btn-trash btn-sm">
+          <button className="btn-trash btn-sm" onClick={onDelete}>
             <i className="fas fa-trash"></i>
           </button>
 

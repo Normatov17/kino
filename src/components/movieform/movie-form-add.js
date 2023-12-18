@@ -17,10 +17,11 @@ class MovieListAdd extends Component {
   };
   render() {
     const { name, viewrs } = this.state;
+    const { addForm } = this.props;
     return (
       <div className="MovieListAdd">
         <h3>Yangi Kino qo'shish</h3>
-        <form className="add-from d-flex gap-4 ">
+        <form className="add-from d-flex gap-4 " onSubmit={addForm}>
           <input
             name="name"
             type="text "
