@@ -21,6 +21,7 @@ class MovieListItem extends Component {
       like: !like,
     }));
   };
+
   render() {
     const { name, viewers, onDelete } = this.props;
     const { favourite, like } = this.state;
@@ -34,7 +35,7 @@ class MovieListItem extends Component {
           {name}
         </span>
         <input
-          type="number"
+          type="text"
           className="list-group-item-input "
           defaultValue={viewers}
         />

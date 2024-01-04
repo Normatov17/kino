@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { v4 as uuidv4 } from "uuid";
 import "./app.css";
 import AppInfo from "../app-info/app-info";
 import SearchPanel from "../search-panel/search-panel";
@@ -19,18 +20,16 @@ class App extends Component {
   }
 
   onDelete = (id) => {
-    this.setState(({ data }) => {
-      // const index = data.findIndex((c) => c.id === id);
-      const newArrayData = data.filter((c) => c.id !== id);
-
-      return {
-        data: newArrayData,
-      };
-    });
+    this.setState(({ data }) => ({
+      data: data.filter((c) => c.id !== id),
+    }));
   };
 
   addForm = (item) => {
-    console.log(item);
+    const newItem = { name: item.name, viewers: item.viewers, id: uuidv4() };
+    this.setState(({ data }) => ({
+      data: [...data, newItem],
+    }));
   };
 
   render() {

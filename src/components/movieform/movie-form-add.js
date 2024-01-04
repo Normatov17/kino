@@ -6,22 +6,37 @@ class MovieListAdd extends Component {
     super(props);
     this.state = {
       name: "",
-      viewrs: "1",
+      viewers: "",
     };
   }
 
   changeHanderInput = (e) => {
+    console.log(e.target.value);
     this.setState({
       [e.target.name]: e.target.value,
     });
   };
+
+  addFormHandler = (e) => {
+    e.preventDefault();
+
+    this.props.addForm({
+      name: this.state.name,
+      viewers: this.state.viewers,
+    });
+
+    this.setState({
+      name: "",
+      viewers: "",
+    });
+  };
+
   render() {
-    const { name, viewrs } = this.state;
-    const { addForm } = this.props;
+    const { name, viewers } = this.state;
     return (
       <div className="MovieListAdd">
         <h3>Yangi Kino qo'shish</h3>
-        <form className="add-from d-flex gap-4 " onSubmit={addForm}>
+        <form className="add-from d-flex gap-4 " onSubmit={this.addFormHandler}>
           <input
             name="name"
             type="text "
@@ -31,14 +46,14 @@ class MovieListAdd extends Component {
             value={name}
           />
           <input
-            name="viewrs"
-            type="number"
+            type="text"
             className="form-control new-post-label"
+            name="viewers"
             placeholder="Nechi marotaba ko'rilgan ?"
             onChange={this.changeHanderInput}
-            value={viewrs}
+            value={viewers}
           />
-          <button type="button" className="btn btn-outline-dark ">
+          <button type="submit" className="btn btn-outline-dark ">
             Qo'shish
           </button>
         </form>
