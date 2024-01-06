@@ -12,9 +12,21 @@ class App extends Component {
     super(props);
     this.state = {
       data: [
-        { name: "Empario Osmon ", viewers: 1290, id: 1, favourite: true },
-        { name: "Omar", viewers: 1922, id: 2, favourite: true },
-        { name: "Umar Ibn Hattob", viewers: 908, id: 3, favourite: false },
+        {
+          name: "Empario Osmon ",
+          viewers: 1290,
+          id: 1,
+          favourite: false,
+          like: false,
+        },
+        { name: "Omar", viewers: 1922, id: 2, favourite: false, like: false },
+        {
+          name: "Umar Ibn Hattob",
+          viewers: 908,
+          id: 3,
+          favourite: false,
+          like: false,
+        },
       ],
     };
   }
@@ -34,10 +46,12 @@ class App extends Component {
 
   render() {
     const { data } = this.state;
+    const allMovies = data.length;
+    const favouriteMovie = data.filter((c) => c.favourite).length;
     return (
       <div className="app font-monofcase">
         <div className="content">
-          <AppInfo />
+          <AppInfo allMovies={allMovies} favouriteMovie={favouriteMovie} />
           <div className="serch-panel">
             <SearchPanel />
             <AppFilter />
